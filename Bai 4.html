@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<body>
+Câu 4:
+<canvas height="400" id="myCanvas" width="400"></canvas>
+<script>
+    //Tạo lớp Circle với tham số x, y, radius, color
+    let Circle = function (x, y, radius, color) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color = color;
+        this.render = function () {
+            let ctx = document.getElementById('myCanvas').getContext('2d');
+            ctx.fillStyle = this.color;
+            ctx.arc(this.x, this.y, radius, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+    };
+    //Tạo đối tượng cirlce và sủ dụng phương thức render
+    let circle = new Circle(10, 10, 100, "#000000");
+    circle.render();
+</script>
+</body>
+</html>

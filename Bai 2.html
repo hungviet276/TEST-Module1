@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+Câu 2:
+<script>
+    // Hàm xóa các số nguyên x có trong mảng arr
+    function tryRemoteFromArray(arr, x) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == x) {
+                arr.splice(i, 1)
+            }
+        }
+        return arr;
+    }
+    let arr = [3,4,6,8,5,2,4,6,8,5];
+    let x = 5;
+    tryRemoteFromArray(arr,x);
+    document.write(arr);
+</script>
+</body>
+</html>

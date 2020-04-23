@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai kiem tra</title>
+</head>
+<body>
+Câu 1:
+<script>
+    // Hàm tìm số lớn nhất trong mảng arr
+    function findMax(arr) {
+        let max = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+</script>
+Câu 2:
+<script>
+    // Hàm xóa các số nguyên x có trong mảng arr
+    function tryRemoteFromArray(arr, x) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == x) {
+                arr.splice(i, 1)
+            }
+        }
+        return arr;
+    }
+</script>
+
+Câu 3:
+<script>
+    //Hàm kiểm tra sô n có nằm trong dãy Fibonacci không
+    function isFibonacci(n) {
+        let number1;
+        let number2;
+        let temple;
+        let result = false;
+        for (number1 = 1, number2 = 0; number1 <= n;) {
+            temple = number1;
+            number1 = number1 + number2;
+            number2 = temple;
+            if (number1 == n) {
+                result = true;
+                break;
+            }
+        }
+        return result
+    }
+</script>
+
+Câu 4:
+<canvas height="400" id="myCanvas" width="400"></canvas>
+<script>
+    //Tạo lớp Circle với tham số x, y, radius, color
+    let Circle = function (x, y, radius, color) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color = color;
+        this.render = function () {
+            let ctx = document.getElementById('myCanvas').getContext('2d');
+            ctx.fillStyle = this.color;
+            ctx.arc(this.x, this.y, radius, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+    };
+    //Tạo đối tượng cirlce và sủ dụng phương thức render
+    let circle = new Circle(10, 10, 100, "#000000");
+    circle.render();
+</script>
+
+</body>
+</html>
